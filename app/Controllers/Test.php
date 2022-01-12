@@ -36,10 +36,11 @@ class Test extends BaseController
 	{
 		$data = [
 			'page_title' 	=> 'My Blog Title',
-			'page_heading'	=> 'My Blog Heading',
+			'page_heading'	=> 'My Blog Heading hello how are you?',
 			'date'	=> '21-05-2020',
 			'price'	=> '500',
 			'price1'	=> '10.53',
+			'mobile'	=> '8500669933',
 		];
 		return $this->parser->setData($data)->render("filter_view");
 
