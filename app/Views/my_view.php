@@ -1,23 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title><?=$page_title?></title>
+	<title>{page_title}</title>
 </head>
 <body>
-	<h1><?=$page_heading?></h1>
-	<h3>Subjects List</h3>
-	<ul>
-		<?php
-		if(count($subjects)>0):
-			foreach ($subjects as $sub) :
-			?>
-			<li><?= $sub; ?></li>
-			<?php
-			endforeach;
-		else:
-			echo "<p>Sorry! No Records Found</p>";
-		endif;
-		?>
-	</ul>
+	<h1>{page_heading}</h1>
+
+	{subjects_list}
+	<h1>{subject}</h1>
+	<p>{abbr}</p>
+	{/subjects_list}
+	
+	{if $status}
+	<p>welcome to CI4.</p>
+	{endif}
+
 </body>
 </html>
