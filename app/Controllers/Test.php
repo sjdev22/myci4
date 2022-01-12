@@ -7,11 +7,15 @@ use \CodeIgniter\Controller;
  */
 class Test extends BaseController
 {
-	
+	public $parser;
+
+	public function __construct()
+	{
+		$this->parser = \Config\Services::parser();
+	}
+
 	public function index()
 	{
-		$parser = \Config\Services::parser();
-
 		$data = [
 			'page_title' 	=> 'My Blog Title',
 			'page_heading'	=> 'My Blog Heading',
@@ -25,7 +29,19 @@ class Test extends BaseController
 			'status' => false
 		];
 
-		return $parser->setData($data)->render("my_view");
+		return $this->parser->setData($data)->render("my_view");
 		//echo view("my_view");
+	}
+	public function view_filters()
+	{
+		$data = [
+			'page_title' 	=> 'My Blog Title',
+			'page_heading'	=> 'My Blog Heading',
+			'date'	=> '21-05-2020',
+			'price'	=> '500',
+			'price1'	=> '10.53',
+		];
+		return $this->parser->setData($data)->render("filter_view");
+
 	}
 }
