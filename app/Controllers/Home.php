@@ -6,6 +6,20 @@ class Home extends BaseController
 {
     public function index()
     {
-        return view('welcome_message');
+    	$data = [
+    		'page_title' => 'Welcome to CodeIgniter 4',
+    		'page_heading' => 'CodeIgniter 4 Training',
+    	];
+        return view('homeview',$data);
+    }
+     public function about()
+    {
+    	$data = [
+    		'page_title' => 'Welcome to CodeIgniter 4',
+    		'page_heading' => 'About Us',
+    	];
+        
+        return view('aboutview',$data);
+        
     }
 }
