@@ -1,359 +1,161 @@
-<html><!-- Mirrored from www.w3schools.com/css/demo_default.htm by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 27 Jan 2020 02:34:31 GMT --><head>
-<title><?=$page_title?></title>
-<style>/* Stylesheet 1: */
-body {
-    font: 100% Lucida Sans, Verdana;
-    margin: 20px;
-    line-height: 26px;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AdminLTE 3 | Dashboard 2</title>
 
-.container {
-    xmin-width: 900px;
-}
-
-.wrapper {
-    position: relative;
-    overflow: auto;
-}
-
-#top, #sidebar, #bottom, .menuitem {
-    border-radius: 4px;
-    margin: 4px;
-}
-
-#top {
-    background-color: #4CAF50;
-    color: #ffffff;
-    padding: 15px;
-}
-
-#menubar {
-    width: 200px;
-    float: left
-}
-
-#main {
-    padding: 10px;
-    margin: 0 210px;
-}
-
-#sidebar {
-    background-color: #32a4e7;
-    color: #ffffff;
-    padding: 10px;
-    width: 180px;
-    bottom: 0;
-    top: 0;
-    right: 0;
-    position: absolute;
-}
-
-#bottom {
-    border: 1px solid #d4d4d4;
-    background-color: #f1f1f1;
-    text-align: center;
-    padding: 10px;
-    font-size: 70%;
-    line-height: 14px;
-}
-
-#top h1, #top p, #menulist {
-    margin: 0;
-    padding: 0;
-}
-
-.menuitem {
-    background-color: #f1f1f1;
-    border: 1px solid #d4d4d4;
-    list-style-type: none;
-    padding: 2px;
-    cursor: pointer;
-}
-
-.menuitem:hover {
-    background-color: #ffffff;
-}
-
-.menuitem:first-child {
-   background-color:#4CAF50;
-   color: white;
-   font-weight:bold;
-}
-
-a {
-    color: #000000;
-    text-decoration: underline;
-}
-
-a:hover {
-    text-decoration: none;
-}
-
-
-@media (max-width: 800px) {
-    #sidebar {
-        width: auto;
-        position: relative;
-    } 
-    #main {
-        margin-right: 0;
-    }    
-       
-}
-
-@media (max-width: 600px) {
-    #menubar {
-        width: auto;
-        float: none;
-    }
-    #main {
-        margin: 0;
-    }    
-}
-</style>
-
-<style>/* Stylesheet 2: */
-body {
-    font-family: Arial;
-    background-color: #d14836;
-    line-height: 20px;
-}
-
-.container {
-    xmin-width: 900px;
-}
-
-.wrapper {
-    position: relative;
-    overflow: auto;
-}
-
-#top {
-    color: #ffffff;
-    padding: 15px;
-    font-size: 30px;
-    line-height: 26px;    
-}
-
-#top h1 {
-    margin:0;
-    line-height: 50px;
-}
-
-#menubar {
-    width: 190px;
-    float: right;
-}
-
-#main {
-    padding: 10px;
-    background-color: #ffffff;
-    font: 80% Verdana;
-}
-
-#main h1, #main h2 {
-    color: #d14836;
-}
-
-#sidebar {
-    background-color: #F6DAD7;
-    color: #d14836;
-    padding: 10px;
-}
-
-#bottom {
-    text-align: center;
-    padding: 10px;
-    font-size: 70%;
-    color: #ffffff;
-}
-
-#menulist {
-    padding:0;
-    font: 16px verdana;
-}
-
-.menuitem {
-    width: 155px;
-    background-color: #d14836;
-    border: 1px solid #d14836;
-    border-radius: 40px;
-    color: #ffffff;
-    list-style-type: none;
-    margin: 10px;
-    padding: 5px;
-    text-align: center;
-    cursor: pointer;
-}
-
-.menuitem:nth-child(2) {
-   background-color:white;
-   color: #d14836;
-   font-weight:bold;
-}
-
-.menuitem:hover {
-    background-color: #ffffff;
-    color: #d14836;
-}
-
-a {
-    color: #d14836;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-</style>
-
-<style>/* Stylesheet 3: */
-body {
-    font: 100% Verdana;
-    margin: 20px;
-    line-height: 26px;
-}
-
-.container {
-    xmin-width: 900px;
-}
-
-.wrapper {
-    position: relative;
-    overflow: auto;
-}
-
-#sidebar {
-    background-color: #f1f1f1;
-    border: 1px solid #d4d4d4;
-    padding-left: 10px;
-}
-
-#bottom {
-    text-align: center;
-    padding: 10px;
-    font-size: 70%;
-    line-height: 14px;
-}
-
-h1, h2, h3 {
-    color: #4CAF50;
-}
-
-#menulist {
-    padding: 0;
-    position: relative;
-    overflow: auto;
-}
-
-.menuitem {
-    width: 165px;
-    float: left;
-    background-color: #555555;
-    color: #ffffff;
-    list-style-type: none;
-    margin: 4px;
-    padding: 2px;
-    text-align: center;
-    cursor: pointer;
-}
-
-.menuitem:nth-child(3) {
-   background-color:#4CAF50;
-}
-
-.menuitem:hover {
-    background-color: #999999;
-}
-
-a {
-    color: #000000;
-}
-
-a:hover {
-    color: #84c754;
-}
-</style>
-<style>/* Stylesheet 4: */
-body {
-    font: 100% Courier New;
-    margin: 20px;
-    line-height: 26px;
-    background-color: #000000;
-}
-
-.container {
-    xmin-width: 900px;
-}
-
-.wrapper {
-    position: relative;
-    overflow: auto;
-}
-
-#top {
-    color: #84c754;
-    padding: 15px;
-}
-
-#main {
-    padding: 10px;
-    color: #84c754;
-}
-
-#sidebar {
-    color: #ffffff;
-    border: 1px solid #ffffff;
-    border-radius: 4px;
-    padding: 10px;
-    width: 320px;
-    top: 0;
-    right: 0;
-    position: absolute;
-    font-size: 80%;
-    line-height: 20px;
-}
-
-#bottom {
-    border: 1px solid #ffffff;
-    border-radius: 4px;
-    color: #ffffff;
-    text-align: center;
-    padding: 10px;
-    font-size: 70%;
-    line-height: 14px;
-}
-
-#top h1,#top p {
-    margin: 0;
-}
-
-.menuitem {
-    color: #84c754;
-    cursor: pointer;
-}
-
-.menuitem:nth-child(4) {
-    color:white;
-    font-weight:bold;
-}
-
-.menuitem:hover {
-    color: #ffffff;
-}
-
-a {
-    color: #ffffff;
-}
-
-a:hover {
-    color: #84c754;
-}
-@media (max-width: 600px) {
-    #sidebar {
-       width: auto;
-       margin-bottom:10px;        
-       position: relative;
-    }    
-}
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="<?=base_url()?>/public/plugins/fontawesome-free/css/all.min.css">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="<?=base_url()?>/public/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="<?=base_url()?>/public/dist/css/adminlte.min.css">
 </head>
+<body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+<div class="wrapper">
+
+  <!-- Preloader -->
+  <div class="preloader flex-column justify-content-center align-items-center">
+    <img class="animation__wobble" src="<?=base_url()?>/public/dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
+  </div>
+
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-dark">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="index3.html" class="nav-link">Home</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="#" class="nav-link">Contact</a>
+      </li>
+    </ul>
+
+    <!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto">
+      <!-- Navbar Search -->
+      <li class="nav-item">
+        <a class="nav-link" data-widget="navbar-search" href="#" role="button">
+          <i class="fas fa-search"></i>
+        </a>
+        <div class="navbar-search-block">
+          <form class="form-inline">
+            <div class="input-group input-group-sm">
+              <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+              <div class="input-group-append">
+                <button class="btn btn-navbar" type="submit">
+                  <i class="fas fa-search"></i>
+                </button>
+                <button class="btn btn-navbar" type="button" data-widget="navbar-search">
+                  <i class="fas fa-times"></i>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </li>
+
+      <!-- Messages Dropdown Menu -->
+      <li class="nav-item dropdown">
+        <a class="nav-link" data-toggle="dropdown" href="#">
+          <i class="far fa-comments"></i>
+          <span class="badge badge-danger navbar-badge">3</span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+          <a href="#" class="dropdown-item">
+            <!-- Message Start -->
+            <div class="media">
+              <img src="dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
+              <div class="media-body">
+                <h3 class="dropdown-item-title">
+                  Brad Diesel
+                  <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
+                </h3>
+                <p class="text-sm">Call me whenever you can...</p>
+                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+              </div>
+            </div>
+            <!-- Message End -->
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <!-- Message Start -->
+            <div class="media">
+              <img src="dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
+              <div class="media-body">
+                <h3 class="dropdown-item-title">
+                  John Pierce
+                  <span class="float-right text-sm text-muted"><i class="fas fa-star"></i></span>
+                </h3>
+                <p class="text-sm">I got your message bro</p>
+                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+              </div>
+            </div>
+            <!-- Message End -->
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <!-- Message Start -->
+            <div class="media">
+              <img src="dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
+              <div class="media-body">
+                <h3 class="dropdown-item-title">
+                  Nora Silvester
+                  <span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>
+                </h3>
+                <p class="text-sm">The subject goes here</p>
+                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+              </div>
+            </div>
+            <!-- Message End -->
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
+        </div>
+      </li>
+      <!-- Notifications Dropdown Menu -->
+      <li class="nav-item dropdown">
+        <a class="nav-link" data-toggle="dropdown" href="#">
+          <i class="far fa-bell"></i>
+          <span class="badge badge-warning navbar-badge">15</span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+          <span class="dropdown-item dropdown-header">15 Notifications</span>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <i class="fas fa-envelope mr-2"></i> 4 new messages
+            <span class="float-right text-muted text-sm">3 mins</span>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <i class="fas fa-users mr-2"></i> 8 friend requests
+            <span class="float-right text-muted text-sm">12 hours</span>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <i class="fas fa-file mr-2"></i> 3 new reports
+            <span class="float-right text-muted text-sm">2 days</span>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+          <i class="fas fa-expand-arrows-alt"></i>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
+          <i class="fas fa-th-large"></i>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <!-- /.navbar -->

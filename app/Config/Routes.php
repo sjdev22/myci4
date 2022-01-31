@@ -20,7 +20,7 @@ $routes->setDefaultNamespace('App\Controllers');
 $routes->setDefaultController('Home');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
-$routes->set404Override();
+$routes->set404Override('errors/custom_404');
 $routes->setAutoRoute(true);
 
 /*
@@ -32,6 +32,22 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
+
+//$routes->add('codeigniter-4-training','Home::index');
+//$routes->add('online-training','Home::about');
+
+$myroutes = [];
+$myroutes['codeigniter-4-training'] = 'Home::index';
+$myroutes['online-training'] = 'Home::about';
+$myroutes['register/(:num)/(:alpha)'] = 'Sample::create/$1/$2';
+$routes->map($myroutes);
+
+$routes->set404Override(function()
+{
+	echo view('errors/custom_404');
+}
+);
+
 
 /*
  * --------------------------------------------------------------------
