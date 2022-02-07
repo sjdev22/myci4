@@ -13,11 +13,11 @@ class Register extends BaseController
 
 	public function __construct()
 	{
-		helper('form');
+		helper(['form','date']);
 		$this->registerModel = new RegisterModel();
 		$this->session = \Config\Services::session();
 	}
-	
+	//
 	public function index()
 	{
 		$data = [];
@@ -41,7 +41,7 @@ class Register extends BaseController
 					'password'	=> password_hash($this->request->getVar('pass'),PASSWORD_DEFAULT),
 					'mobile'		=> $this->request->getVar('mobile'),
 					'uniid'		=> $uniid,
-					'created_at' => date('Y-m-d h:i:s')
+					'activation_date' => date('Y-m-d h:i:s')
 				];
 				if($this->registerModel->createUser($userdata))
 				{
@@ -82,5 +82,58 @@ class Register extends BaseController
 
 
 		return view('register_view',$data);
+	}
+	public function activate($uniid=null)
+	{
+		$data = [];
+		if(!empty($uniid))
+		{
+			$userdata = $this->registerModel->verifyUniid($uniid);
+			if($userdata)
+			{
+				if($this->verifyExpiryTime($userdata->activation_date))
+				{
+					if($userdata->status == 'inactive')
+					{
+						$status = $this->registerModel->updateStatus($uniid);
+						if($status==true)
+						{
+							$data['success'] = 'Account activated successfully';
+						}
+					}
+					else
+					{
+						$data['success'] = 'Your account is already activated';
+					}
+				}
+				else
+				{
+					$data['error'] = 'Sorry! Activation link has expired.';
+				}
+			}
+			else
+			{
+				$data['error'] = 'Sorry! We aer unable to find your account';
+			}
+		}
+		else
+		{
+			$data['error'] = 'Sorry! Unable to proccess your request';
+		}
+		return view('activate_view',$data);
+	}
+	public function verifyExpiryTime($regTime)
+	{
+		$currTime = now();
+		$regTime = strtotime($regTime);
+		$diffTime = $currTime - $regTime;
+		if(3600 < $diffTime)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
 	}
 }

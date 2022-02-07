@@ -19,14 +19,21 @@
   <!-- /.login-logo -->
   <div class="card card-outline card-primary">
     <div class="card-header text-center">
-      <a href="../../index2.html" class="h1"><b>My</b>Ci4</a>
+      <a href="<?=base_url()?>" class="h1"><b>My</b>Ci4</a>
     </div>
     <div class="card-body">
       <p class="login-box-msg">Sign in to start your session</p>
 
+      <?php if(isset($validation)) : ?>
+        <?=$validation->listErrors();?>
+      <?php endif; ?>
+      <?php if(session()->getTempdata('error')):?>
+      <div class="alert alert-danger"><?=session()->getTempdata('error')?></div>
+      <?php endif; ?>
+
       <?=form_open('login')?>
         <div class="input-group mb-3">
-          <input type="email" class="form-control" placeholder="Email">
+          <input type="email" class="form-control" placeholder="Email" name="email" value="<?=set_value('email')?>">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
@@ -34,7 +41,7 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="password" class="form-control" placeholder="Password">
+          <input type="password" class="form-control" placeholder="Password" name="pass" value="<?=set_value('pass')?>">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
